@@ -1,0 +1,274 @@
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Create a New Audit</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Audit Header
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>Cost Center</label>
+                                <input class="form-control" data-role="maskedtextbox" data-bind="events: { change: Data.ValidateCostCenter }, value: Data.CostCenterId, mask: costCenterMask">
+                                <p class="help-block">format: 0001234</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>Audit Start</label>
+                                <input class="form-control" id="StartDateTime" data-role="datetimepicker" data-bind="enabled: Data.Enabled, value: Data.StartDateTime, lock: Data.Locked">
+                                <p class="help-block">use calendar and time pickers</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>Audit End</label>
+                                <input class="form-control" id="FinishDateTime" data-role="datetimepicker" data-bind="enabled: Data.Enabled, value: Data.FinishDateTime, lock: Data.Locked">
+                                <p class="help-block">use calendar and time pickers</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>Auditor</label>
+                                <span class="form-control" id="Auditor" disabled data-bind="text: Data.Auditor">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>Auditor Sup. Name</label>
+                                <span class="form-control" id="Auditor" disabled data-bind="text: Data.AuditorSupName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>Store Type</label>
+                                <span class="form-control" id="StoreType" disabled data-bind="text: Data.StoreType">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>Audit Type</label>
+                                <input data-role="dropdownlist" 
+                                        data-auto-bind="false"
+                                        data-value-primitive="true"
+                                        data-text-field="AuditName"
+                                        data-value-field="AuditId"
+                                        data-bind="value: Data.AuditTypeId, source: auditTypes, enabled: Data.Enabled" />
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>Last Full Audit</label>
+                                <span class="form-control" id="StoreType" disabled data-bind="text: Data.LastFullAudit">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>Last Partial Audit</label>
+                                <span class="form-control" id="StoreType" disabled data-bind="text: Data.LastPartialAudit">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>General Manager</label>
+                                <span class="form-control" id="GeneralManager" disabled data-bind="text: Data.GeneralManager">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>GM Arrival Time</label>
+                                <input id="GMArrival" class="form-control" data-role="timepicker" data-bind="enabled: Data.Enabled, value: Data.GMArrival, lock: Data.Locked">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>District Manager</label>
+                                <span class="form-control" id="DistrictManager" disabled data-bind="text: Data.DistrictManager">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>Region Manager</label>
+                                <span class="form-control" id="RegionManager" disabled data-bind="text: Data.RegionManager">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Audit Header
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form">
+
+                            <div class="form-group">
+                                <label>Checkboxes</label>
+                                <div class="checkbox">
+                                    <label>
+                                                    <input type="checkbox" value="">Checkbox 1
+                                                </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                                    <input type="checkbox" value="">Checkbox 2
+                                                </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                                    <input type="checkbox" value="">Checkbox 3
+                                                </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Inline Checkboxes</label>
+                                <label class="checkbox-inline">
+                                                <input type="checkbox">1
+                                            </label>
+                                <label class="checkbox-inline">
+                                                <input type="checkbox">2
+                                            </label>
+                                <label class="checkbox-inline">
+                                                <input type="checkbox">3
+                                            </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Radio Buttons</label>
+                                <div class="radio">
+                                    <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
+                                                </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
+                                                </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
+                                                </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Inline Radio Buttons</label>
+                                <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
+                                            </label>
+                                <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
+                                            </label>
+                                <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
+                                            </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Selects</label>
+                                <select class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Multiple Selects</label>
+                                <select multiple class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit Button</button>
+                            <button type="reset" class="btn btn-default">Reset Button</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <h1>Disabled Form States</h1>
+                        <form role="form">
+                            <fieldset disabled>
+                                <div class="form-group">
+                                    <label for="disabledSelect">Disabled input</label>
+                                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="disabledSelect">Disabled select menu</label>
+                                    <select id="disabledSelect" class="form-control">
+                                                    <option>Disabled select</option>
+                                                </select>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                                    <input type="checkbox">Disabled Checkbox
+                                                </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Disabled Button</button>
+                            </fieldset>
+                        </form>
+                        <h1>Form Validation States</h1>
+                        <form role="form">
+                            <div class="form-group has-success">
+                                <label class="control-label" for="inputSuccess">Input with success</label>
+                                <input type="text" class="form-control" id="inputSuccess">
+                            </div>
+                            <div class="form-group has-warning">
+                                <label class="control-label" for="inputWarning">Input with warning</label>
+                                <input type="text" class="form-control" id="inputWarning">
+                            </div>
+                            <div class="form-group has-error">
+                                <label class="control-label" for="inputError">Input with error</label>
+                                <input type="text" class="form-control" id="inputError">
+                            </div>
+                        </form>
+                        <h1>Input Groups</h1>
+                        <form role="form">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">@</span>
+                                <input type="text" class="form-control" placeholder="Username">
+                            </div>
+                            <div class="form-group input-group">
+                                <input type="text" class="form-control">
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="fa fa-eur"></i>
+                                            </span>
+                                <input type="text" class="form-control" placeholder="Font Awesome Icon">
+                            </div>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control">
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                            <div class="form-group input-group">
+                                <input type="text" class="form-control">
+                                <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i>
+                                                </button>
+                                            </span>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
