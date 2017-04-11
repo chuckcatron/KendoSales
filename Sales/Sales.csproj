@@ -255,17 +255,10 @@
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="App_Start\StructuremapWebApi.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Core\Logger.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
-    <Compile Include="DataAccess\Context\Customer.cs">
-      <DependentUpon>Sales.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\Context\Employee.cs">
-      <DependentUpon>Sales.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\Context\Product.cs">
-      <DependentUpon>Sales.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\Context\Sale.cs">
+    <Compile Include="DataAccess\Context\Listing.cs">
       <DependentUpon>Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\Context\Sales.Context.cs">
@@ -283,7 +276,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Sales.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\Context\sysdiagram.cs">
+    <Compile Include="DataAccess\Context\Task.cs">
+      <DependentUpon>Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Context\User.cs">
       <DependentUpon>Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\GridService\DataSourceRequest.cs" />
@@ -293,7 +289,10 @@
     <Compile Include="DataAccess\GridService\QueryableExtensions.cs" />
     <Compile Include="DataAccess\GridService\Sort.cs" />
     <Compile Include="DataAccess\Interfaces\ISalesRepo.cs" />
+    <Compile Include="DataAccess\Interfaces\IUserRepo.cs" />
+    <Compile Include="DataAccess\Models\User.cs" />
     <Compile Include="DataAccess\Repositories\SalesRepo.cs" />
+    <Compile Include="DataAccess\Repositories\UserRepo.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
@@ -380,18 +379,8 @@
     <Content Include="pages\home.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="DataAccess\Context\Sales.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Sales.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DataAccess\Context\Sales.edmx.diagram">
-      <DependentUpon>Sales.edmx</DependentUpon>
     </Content>
     <Content Include="css\kendo\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="css\kendo\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
@@ -414,6 +403,13 @@
     <Content Include="css\kendo\fonts\glyphs\WebComponentsIcons.woff" />
     <Content Include="css\kendo\kendo.bootstrap.min.css.map" />
     <Content Include="css\kendo\kendo.common-bootstrap.min.css.map" />
+    <EntityDeploy Include="DataAccess\Context\Sales.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sales.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataAccess\Context\Sales.edmx.diagram">
+      <DependentUpon>Sales.edmx</DependentUpon>
+    </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -448,6 +444,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="vendor\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

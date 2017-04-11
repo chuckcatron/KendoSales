@@ -12,12 +12,15 @@ namespace Sales.DataAccess.Context
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class Listing
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int ListingId { get; set; }
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
+        public string County { get; set; }
+        public string ListingType { get; set; }
     }
 }

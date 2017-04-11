@@ -4,15 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="92b94615b7534f8aa3e3a8e854e0e3d3" Name="Diagram1">
-        <EntityTypeShape EntityType="SalesDBModel.Customer" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalesDBModel.Employee" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalesDBModel.Product" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalesDBModel.Sale" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalesDBModel.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="SalesDBModel.SalesCustomersFK" ManuallyRouted="false" />
-        <AssociationConnector Association="SalesDBModel.SalesEmployeesFK" ManuallyRouted="false" />
-        <AssociationConnector Association="SalesDBModel.SalesProductsFK" ManuallyRouted="false" />
+      <Diagram DiagramId="567f2544339d48dfb9d63ed326ebae18" Name="Diagram1">
+        <EntityTypeShape EntityType="KendoSalesDBModel.Task" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KendoSalesDBModel.User" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="KendoSalesDBModel.FK_Tasks_ToTask" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KendoSalesDBModel.Listing" Width="1.5" PointX="2.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

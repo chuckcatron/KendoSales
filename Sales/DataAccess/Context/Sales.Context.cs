@@ -13,10 +13,10 @@ namespace Sales.DataAccess.Context
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SalesDBEntities : DbContext
+    public partial class KendoSalesDBEntities : DbContext
     {
-        public SalesDBEntities()
-            : base("name=SalesDBEntities")
+        public KendoSalesDBEntities()
+            : base("name=KendoSalesDBEntities")
         {
         }
     
@@ -25,10 +25,8 @@ namespace Sales.DataAccess.Context
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Sale> Sales { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Task> Tasks { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Listing> Listings { get; set; }
     }
 }

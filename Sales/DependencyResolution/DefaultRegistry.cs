@@ -32,6 +32,7 @@ namespace Sales.DependencyResolution {
                     scan.WithDefaultConventions();
                 });
             For<ISalesRepo>().Use<SalesRepo>();
+            For<IUserRepo>().Use<UserRepo>();
         }
 
         #endregion

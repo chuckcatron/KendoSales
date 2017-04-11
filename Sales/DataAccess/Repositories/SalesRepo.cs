@@ -1,44 +1,21 @@
-﻿using System;
+﻿using Sales.DataAccess.Context;
+using Sales.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using Sales.DataAccess.Context;
-using Sales.DataAccess.Interfaces;
 
 namespace Sales.DataAccess.Repositories
 {
-    public class SalesRepo : ISalesRepo
+    public class SalesRepo: ISalesRepo
     {
-        public List<Sale> GetAllSales()
+        public List<Listing> GetAllListings()
         {
-            using (var db = new SalesDBEntities())
+            var listings = new List<Listing>();
+            using(var db = new KendoSalesDBEntities())
             {
-                return db.Sales.ToList();
+                listings = db.Listings.AsQueryable().ToList();
             }
-        }
 
-        public List<Sale> GetSalesBySalesPersonId(int id)
-        {
-            using (var db = new SalesDBEntities())
-            {
-                return db.Sales.Where(s => s.SalesPersonID == id).ToList();
-            }
-        }
-
-        public List<Sale> GetSalesByCustomerId(int id)
-        {
-            using (var db = new SalesDBEntities())
-            {
-                return db.Sales.Where(s => s.CustomerID == id).ToList();
-            }
-        }
-
-        public List<Sale> GetSalesByProductId(int id)
-        {
-            using (var db = new SalesDBEntities())
-            {
-                return db.Sales.Where(s => s.ProductID == id).ToList();
-            }
+            return listings;
         }
     }
 }

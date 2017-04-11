@@ -12,19 +12,29 @@ namespace Sales.DataAccess.Context
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Task
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Task()
         {
-            this.Sales = new HashSet<Sale>();
+            this.Task1 = new HashSet<Task>();
         }
     
-        public int ProductID { get; set; }
-        public string Name { get; set; }
-        public Nullable<decimal> Price { get; set; }
+        public int TaskId { get; set; }
+        public System.DateTime Start { get; set; }
+        public System.DateTime End { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public int OwnerId { get; set; }
+        public bool IsAllDay { get; set; }
+        public string RecurrenceRule { get; set; }
+        public Nullable<int> RecurrenceId { get; set; }
+        public string RecurrenceException { get; set; }
+        public string StartTimezone { get; set; }
+        public string EndTimezone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sale> Sales { get; set; }
+        public virtual ICollection<Task> Task1 { get; set; }
+        public virtual Task Task2 { get; set; }
     }
 }

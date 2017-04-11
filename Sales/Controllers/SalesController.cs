@@ -23,18 +23,10 @@ namespace Sales.Controllers
         }
         [HttpGet]
         [Route("all")]
-        public HttpResponseMessage GetAllSales()
+        public HttpResponseMessage GetAllListings()
         {
-            var allSales = _salesRepo.GetAllSales();
+            var allSales = _salesRepo.GetAllListings();
             return Request.CreateResponse(HttpStatusCode.OK, allSales);
-        }
-
-        [HttpGet]
-        [Route("salesperson/{id}")]
-        public HttpResponseMessage GetSalesPersonSales(int id)
-        {
-            var sales = _salesRepo.GetSalesBySalesPersonId(id);
-            return Request.CreateResponse(HttpStatusCode.OK, sales);
         }
     }
 }
