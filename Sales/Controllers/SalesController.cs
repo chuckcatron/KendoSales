@@ -22,11 +22,27 @@ namespace Sales.Controllers
             _salesRepo = salesRepo;
         }
         [HttpGet]
-        [Route("all")]
+        [Route("listings")]
         public HttpResponseMessage GetAllListings()
         {
             var allSales = _salesRepo.GetAllListings();
             return Request.CreateResponse(HttpStatusCode.OK, allSales);
+        }
+        
+        [HttpGet]
+        [Route("appointments")]
+        public HttpResponseMessage GetAppointments()
+        {
+            var allAppointments = _salesRepo.GetAllAppointments();
+            return Request.CreateResponse(HttpStatusCode.OK, allAppointments);
+        }
+
+        [HttpGet]
+        [Route("buildingstyles")]
+        public HttpResponseMessage GetBuildingStyles()
+        {
+            var allstyles = _salesRepo.GetAllBuildingStyles();
+            return Request.CreateResponse(HttpStatusCode.OK, allstyles);
         }
     }
 }

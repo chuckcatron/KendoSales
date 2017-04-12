@@ -255,21 +255,15 @@
                             <a href="#home" data-bind="click: homeClicked"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Audits<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Listings<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#create">Create an Audit Report</a>
-                                </li>
-                                <li>
-                                    <a href="#view">View an Existing Audit</a>
-                                </li>
-                                <li>
-                                    <a href="#edit">Edit an Existing Audit</a>
-                                </li>
-                                <li>
-                                    <a href="#delete">Delete an Existing Audit</a>
+                                    <a href="#create">New Listing</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="#schedule" data-bind="click: scheduleClicked"><i class="fa fa-calendar fa-fw"></i> Schedules</a>
                         </li>
                     </ul>
                 </div>
@@ -294,9 +288,19 @@
     <script src="vendor/morrisjs/morris.min.js"></script>
     <script src="vendor/raphael/raphael.min.js"></script>
     <script src="data/morris-data.js"></script>
+
+    <script src="js/classes/common.js"></script>
     <script src="js/extensions/lock.js"></script>
     <script src="js/extensions/mask.js"></script>
-    <script src="js/observables/audit.js"></script>
+    <script src="js/models/gridLoader.js"></script>
+    <script src="js/models/loaderModel.js"></script>
+    <script src="js/models/fileModel.js"></script>
+    <script src="js/models/dataModels.js"></script>
+    <script src="js/observables/mainObservables.js"></script>
+    <script src="js/models/userModel.js"></script>
+
+    <script src="js/observables/listing.js"></script>
+    <script src="js/observables/schedule.js"></script>
     <script src="js/observables/navigation.js"></script>
     <script src="js/main.js"></script>
     <!-- Custom Theme JavaScript -->

@@ -28,5 +28,6 @@ namespace Sales.DataAccess.Context
         public virtual DbSet<Task> Tasks { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Listing> Listings { get; set; }
+        public virtual DbSet<BuildingStyle> BuildingStyles { get; set; }
     }
 }

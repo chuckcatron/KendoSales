@@ -258,6 +258,9 @@
     <Compile Include="Core\Logger.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="DataAccess\Context\BuildingStyle.cs">
+      <DependentUpon>Sales.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\Context\Listing.cs">
       <DependentUpon>Sales.tt</DependentUpon>
     </Compile>
@@ -357,10 +360,10 @@
       <DependentUpon>Sales.edmx</DependentUpon>
       <LastGenOutput>Sales.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="DataAccess\Context\Sales.edmx.sql" />
     <Content Include="DataAccess\Context\Sales.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sales.edmx</DependentUpon>
-      <LastGenOutput>Sales.cs</LastGenOutput>
     </Content>
     <Content Include="data\flot-data.js" />
     <Content Include="data\morris-data.js" />
@@ -368,15 +371,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="js\classes\common.js" />
+    <Content Include="js\data\dataAccess.js" />
     <Content Include="js\extensions\lock.js" />
     <Content Include="js\extensions\mask.js" />
     <Content Include="js\main.js" />
-    <Content Include="js\observables\audit.js" />
+    <Content Include="js\models\dataModels.js" />
+    <Content Include="js\models\fileModel.js" />
+    <Content Include="js\models\gridLoader.js" />
+    <Content Include="js\models\loaderModel.js" />
+    <Content Include="js\models\userModel.js" />
+    <Content Include="js\observables\listing.js" />
+    <Content Include="js\observables\mainObservables.js" />
     <Content Include="js\observables\navigation.js" />
+    <Content Include="js\observables\schedule.js" />
     <Content Include="js\sb-admin-2.js" />
     <Content Include="js\sb-admin-2.min.js" />
     <Content Include="pages\create.html" />
     <Content Include="pages\home.html" />
+    <Content Include="pages\schedule.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="NLog.config">

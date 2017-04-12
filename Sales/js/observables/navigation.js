@@ -7,7 +7,6 @@ var navigationModel = kendo.observable({
         router.navigate("home", true);
         navigationModel.loadHome();
     },
-
     loadHome: function() {
         //loaderModel.show();
         $.ajax({ url: '../../pages/home.html', cache: false })
@@ -24,7 +23,6 @@ var navigationModel = kendo.observable({
                 //loaderModel.hide();
             });
     },
-
     createClicked: function(e) {
         if (e !== undefined) {
             e.preventDefault();
@@ -32,15 +30,36 @@ var navigationModel = kendo.observable({
         router.navigate("create", true);
         navigationModel.loadCreate();
     },
-
     loadCreate: function() {
         //loaderModel.show();
         $.ajax({ url: '../../pages/create.html', cache: false })
             .done(function(template) {
-                layout.showIn("#main-layout", new kendo.View(template, { model: audit.init(), evalTemplate: true }));
+                layout.showIn("#main-layout", new kendo.View(template, { model: listing.init(), evalTemplate: true }));
                 console.log("navigation.loadCreate complete");
             })
             .always(function() {
+                //$("#gallery-layout").empty();
+                //$("#ulNavigation>li").removeClass("active");
+                //$("#liHome").addClass("active");
+
+                //loaderModel.hide();
+            });
+    },
+    scheduleClicked: function (e) {
+        if (e !== undefined) {
+            e.preventDefault();
+        }
+        router.navigate("schedule", true);
+        navigationModel.loadSchedule();
+    },
+    loadSchedule: function () {
+        //loaderModel.show();
+        $.ajax({ url: '../../pages/schedule.html', cache: false })
+            .done(function (template) {
+                layout.showIn("#main-layout", new kendo.View(template, { model: schedule.init(), evalTemplate: true }));
+                console.log("navigation.loadSchedule complete");
+            })
+            .always(function () {
                 //$("#gallery-layout").empty();
                 //$("#ulNavigation>li").removeClass("active");
                 //$("#liHome").addClass("active");

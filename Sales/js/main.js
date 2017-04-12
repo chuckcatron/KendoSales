@@ -12,14 +12,8 @@ $(function(){
     router.route("create", function() {
         navigationModel.loadCreate();
     });
-    router.route("edit", function() {
-        alert("Edit Audit");
-    });
-    router.route("view", function() {
-        alert("View Audit");
-    });
-    router.route("delete", function() {
-        alert("Delete Audit");
+    router.route("schedule", function() {
+        navigationModel.loadSchedule();
     });
     router.route("home", function() {
         navigationModel.loadHome();

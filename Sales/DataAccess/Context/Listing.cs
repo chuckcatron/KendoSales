@@ -22,5 +22,14 @@ namespace Sales.DataAccess.Context
         public string Zip { get; set; }
         public string County { get; set; }
         public string ListingType { get; set; }
+        public string Description { get; set; }
+        public Nullable<System.DateTime> MeetupDate { get; set; }
+        public Nullable<System.DateTime> GoLiveDate { get; set; }
+        public Nullable<System.DateTime> InspectionDate { get; set; }
+        public Nullable<System.DateTime> ClosingDate { get; set; }
+        public Nullable<int> Beds { get; set; }
+        public Nullable<decimal> Baths { get; set; }
+        public Nullable<int> SquareFoot { get; set; }
+        public string Style { get; set; }
     }
 }

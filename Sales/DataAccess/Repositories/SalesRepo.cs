@@ -17,5 +17,25 @@ namespace Sales.DataAccess.Repositories
 
             return listings;
         }
+
+        public List<Task> GetAllAppointments()
+        {
+            var tasks = new List<Task>();
+            using (var db = new KendoSalesDBEntities())
+            {
+                tasks = db.Tasks.AsQueryable().ToList();
+            }
+            return tasks;
+        }
+
+        public List<BuildingStyle> GetAllBuildingStyles()
+        {
+            var styles = new List<BuildingStyle>();
+            using (var db = new KendoSalesDBEntities())
+            {
+                styles = db.BuildingStyles.AsQueryable().ToList();
+            }
+            return styles;
+        }
     }
 }
