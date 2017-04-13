@@ -7,6 +7,12 @@ var listing = kendo.observable({
             { AuditId: 'R', TypeName: "Residential"}
         ]
     }),
+    states: new kendo.data.DataSource({
+        data: states
+    }),
+    county: new kendo.data.DataSource({
+        data: counties
+    }),
     init: function () {
         this.set("Data", new Listing());
         return this;
@@ -20,7 +26,7 @@ var Listing = kendo.data.Model.define({
         "Address1": { type: "string", defaultValue: "" },
         "Address2": { type: "string", defaultValue: "" },
         "City": { type: "string", defaultValue: "" },
-        "State": { type: "string", defaultValue: "Ohio" },
+        "State": { type: "string", defaultValue: "OH" },
         "Zip": { type: "string", defaultValue: "" },
         "County": { type: "string", defaultValue: "" },
         "ListingType": { type: "string", defaultValue: "0" },
