@@ -14,7 +14,16 @@ namespace Sales.DataAccess.Context
     
     public partial class BuildingStyle
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public BuildingStyle()
+        {
+            this.Listings = new HashSet<Listing>();
+        }
+    
         public int StyleId { get; set; }
         public string Description { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Listing> Listings { get; set; }
     }
 }

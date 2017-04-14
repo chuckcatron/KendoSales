@@ -50,9 +50,9 @@ var buildingStyleDS = new kendo.data.DataSource({
     },
     error: function (e) {
         // handle data operation error
-        alert("Error: " + e.status + "; Error message: Problem loading Count Types");
+        alert("Error: " + e.status + "; Error message: Problem loading Building Style");
     },
     schema: {
-        model: CountType
+        model: BuildingStyle
     }
 });

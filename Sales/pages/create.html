@@ -8,43 +8,32 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Listing
+                    Important Dates
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <label>Type</label>
-                                <input data-role="dropdownlist"
-                                       data-auto-bind="false"
-                                       data-value-primitive="true"
-                                       data-text-field="TypeName"
-                                       data-value-field="TypeId"
-                                       data-bind="value: Data.ListingType, source: listingTypes, enabled: Data.Enabled" />
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
                                 <label>Initial Appointment</label>
                                 <input class="form-control" id="MeetupDate" data-role="datepicker" data-bind="enabled: Data.Enabled, value: Data.MeetupDate">
                                 <p class="help-block">use calendar and time pickers</p>
                             </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
                                 <label>Go Live</label>
                                 <input class="form-control" id="GoLiveDate" data-role="datepicker" data-bind="enabled: Data.Enabled, value: Data.GoLiveDate">
                                 <p class="help-block">use calendar and time pickers</p>
                             </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
                                 <label>Inspection</label>
                                 <input class="form-control" id="InspectionDate" data-role="datepicker" data-bind="enabled: Data.Enabled, value: Data.InspectionDate">
                                 <p class="help-block">use calendar and time pickers</p>
                             </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
                                 <label>Closing</label>
                                 <input class="form-control" id="ClosingDate" data-role="datepicker" data-bind="enabled: Data.Enabled, value: Data.ClosingDate">
@@ -52,16 +41,27 @@
                             </div>
                         </div>
                     </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Property Address
+                </div>
+                <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label>Address 1</label>
                                 <input class="form-control" id="Address1" data-bind="text: Data.Address1">
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label>Address 2</label>
                                 <input class="form-control" id="Address2" data-bind="text: Data.Address2">
@@ -69,13 +69,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-4 col-md-5 col-sm-5 col-xs-12">
                             <div class="form-group">
                                 <label>City</label>
                                 <input class="form-control" id="City" data-bind="text: Data.City">
                             </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3 col-md-2 col-sm-4 col-xs-12">
                             <div class="form-group">
                                 <label>State</label>
                                 <input data-role="dropdownlist"
@@ -86,13 +86,13 @@
                                        data-bind="value: Data.State, source: states, enabled: Data.Enabled" />
                             </div>
                         </div>
-                        <div class="col-lg-1 col-md-2">
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                             <div class="form-group">
                                 <label>Zip</label>
                                 <input class="form-control" id="Zip" data-bind="text: Data.Zip">
                             </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3 col-md-3 col-sm-6">
                             <div class="form-group">
                                 <label>County</label>
                                 <input data-role="dropdownlist"
@@ -109,6 +109,73 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Property Details
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Type</label>
+                                <input data-role="dropdownlist"
+                                       data-auto-bind="false"
+                                       data-value-primitive="true"
+                                       data-text-field="TypeName"
+                                       data-value-field="TypeId"
+                                       data-bind="value: Data.ListingType, source: listingTypes, enabled: Data.Enabled" />
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Style</label>
+                                <input data-role="dropdownlist"
+                                       data-auto-bind="false"
+                                       data-value-primitive="true"
+                                       data-text-field="Description"
+                                       data-value-field="StyleId"
+                                       data-bind="value: Data.Style, source: buildingStyleData, enabled: Data.Enabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                            <div class="form-group">
+                                <label>Beds</label>
+                                <input data-role="dropdownlist"
+                                       data-auto-bind="false"
+                                       data-value-primitive="true"
+                                       data-text-field="count"
+                                       data-value-field="count"
+                                       data-bind="value: Data.Beds, source: counts, enabled: Data.Enabled" />
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                            <div class="form-group">
+                                <label>Baths</label>
+                                <input data-role="dropdownlist"
+                                       data-auto-bind="false"
+                                       data-value-primitive="true"
+                                       data-text-field="count"
+                                       data-value-field="count"
+                                       data-bind="value: Data.Baths, source: counts, enabled: Data.Enabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label>Property Description</label>
+                                <textarea rows="10" class="form-control" id="Description" data-bind="text: Data.Description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Audit Header
@@ -122,81 +189,81 @@
                                 <label>Checkboxes</label>
                                 <div class="checkbox">
                                     <label>
-                                                    <input type="checkbox" value="">Checkbox 1
-                                                </label>
+                                        <input type="checkbox" value="">Checkbox 1
+                                    </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                                    <input type="checkbox" value="">Checkbox 2
-                                                </label>
+                                        <input type="checkbox" value="">Checkbox 2
+                                    </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                                    <input type="checkbox" value="">Checkbox 3
-                                                </label>
+                                        <input type="checkbox" value="">Checkbox 3
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Inline Checkboxes</label>
                                 <label class="checkbox-inline">
-                                                <input type="checkbox">1
-                                            </label>
+                                    <input type="checkbox">1
+                                </label>
                                 <label class="checkbox-inline">
-                                                <input type="checkbox">2
-                                            </label>
+                                    <input type="checkbox">2
+                                </label>
                                 <label class="checkbox-inline">
-                                                <input type="checkbox">3
-                                            </label>
+                                    <input type="checkbox">3
+                                </label>
                             </div>
                             <div class="form-group">
                                 <label>Radio Buttons</label>
                                 <div class="radio">
                                     <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
-                                                </label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
+                                    </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
-                                                </label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
+                                    </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
-                                                </label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Inline Radio Buttons</label>
                                 <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
-                                            </label>
+                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
+                                </label>
                                 <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
-                                            </label>
+                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
+                                </label>
                                 <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
-                                            </label>
+                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
+                                </label>
                             </div>
                             <div class="form-group">
                                 <label>Selects</label>
                                 <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Multiple Selects</label>
                                 <select multiple class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
                             </div>
                             <button type="submit" class="btn btn-default">Submit Button</button>
                             <button type="reset" class="btn btn-default">Reset Button</button>
@@ -213,13 +280,13 @@
                                 <div class="form-group">
                                     <label for="disabledSelect">Disabled select menu</label>
                                     <select id="disabledSelect" class="form-control">
-                                                    <option>Disabled select</option>
-                                                </select>
+                                        <option>Disabled select</option>
+                                    </select>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                                    <input type="checkbox">Disabled Checkbox
-                                                </label>
+                                        <input type="checkbox">Disabled Checkbox
+                                    </label>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Disabled Button</button>
                             </fieldset>
@@ -250,8 +317,9 @@
                                 <span class="input-group-addon">.00</span>
                             </div>
                             <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-eur"></i>
-                                            </span>
+                                <span class="input-group-addon">
+                                    <i class="fa fa-eur"></i>
+                                </span>
                                 <input type="text" class="form-control" placeholder="Font Awesome Icon">
                             </div>
                             <div class="form-group input-group">
@@ -262,14 +330,15 @@
                             <div class="form-group input-group">
                                 <input type="text" class="form-control">
                                 <span class="input-group-btn">
-                                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i>
-                                                </button>
-                                            </span>
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
                             </div>
-                            </form>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
+</div>

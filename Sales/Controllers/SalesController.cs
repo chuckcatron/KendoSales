@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Results;
 using System.Web.Routing;
-using Sales.DataAccess.Context;
 using Sales.DataAccess.Interfaces;
-using Sales.DataAccess.Repositories;
 
 namespace Sales.Controllers
 {

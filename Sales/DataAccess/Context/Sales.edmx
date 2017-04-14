@@ -4,102 +4,119 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="KendoSalesDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="KendoSalesDBModelStoreContainer">
-    <EntitySet Name="Tasks" EntityType="KendoSalesDBModel.Store.Tasks" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Users" EntityType="KendoSalesDBModel.Store.Users" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Listings" EntityType="KendoSalesDBModel.Store.Listings" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="BuildingStyles" EntityType="KendoSalesDBModel.Store.BuildingStyles" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_Tasks_ToTask" Association="KendoSalesDBModel.Store.FK_Tasks_ToTask">
-      <End Role="Task" EntitySet="Tasks" />
-      <End Role="Task1" EntitySet="Tasks" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Tasks">
-    <Key>
-      <PropertyRef Name="TaskId" />
-    </Key>
-    <Property Name="TaskId" Type="int" Nullable="false" />
-    <Property Name="Start" Type="datetime" Nullable="false" />
-    <Property Name="End" Type="datetime" Nullable="false" />
-    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="OwnerId" Type="int" Nullable="false" />
-    <Property Name="IsAllDay" Type="bit" Nullable="false" />
-    <Property Name="RecurrenceRule" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="RecurrenceId" Type="int" Nullable="true" />
-    <Property Name="RecurrenceException" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="StartTimezone" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="EndTimezone" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="UserId" Type="int" Nullable="false" />
-    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Listings">
-    <Key>
-      <PropertyRef Name="ListingId" />
-    </Key>
-    <Property Name="ListingId" Type="int" Nullable="false" />
-    <Property Name="Address1" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Address2" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="City" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="State" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Zip" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="County" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="ListingType" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="MeetupDate" Type="datetime" Nullable="true" />
-    <Property Name="GoLiveDate" Type="datetime" Nullable="true" />
-    <Property Name="InspectionDate" Type="datetime" Nullable="true" />
-    <Property Name="ClosingDate" Type="datetime" Nullable="true" />
-    <Property Name="Beds" Type="int" Nullable="true" />
-    <Property Name="Baths" Type="decimal" Nullable="true" Precision="2" Scale="1" />
-    <Property Name="SquareFoot" Type="int" Nullable="true" />
-    <Property Name="Style" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="BuildingStyles">
-    <Key>
-      <PropertyRef Name="StyleId" />
-    </Key>
-    <Property Name="StyleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <Association Name="FK_Tasks_ToTask">
-    <End Role="Task" Type="KendoSalesDBModel.Store.Tasks" Multiplicity="0..1" />
-    <End Role="Task1" Type="KendoSalesDBModel.Store.Tasks" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Task">
-        <PropertyRef Name="TaskId" />
-      </Principal>
-      <Dependent Role="Task1">
-        <PropertyRef Name="RecurrenceId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="KendoSalesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BuildingStyles">
+          <Key>
+            <PropertyRef Name="StyleId" />
+          </Key>
+          <Property Name="StyleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Listings">
+          <Key>
+            <PropertyRef Name="ListingId" />
+          </Key>
+          <Property Name="ListingId" Type="int" Nullable="false" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address2" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Zip" Type="nvarchar(max)" />
+          <Property Name="County" Type="nvarchar(max)" />
+          <Property Name="ListingType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="MeetupDate" Type="datetime" />
+          <Property Name="GoLiveDate" Type="datetime" />
+          <Property Name="InspectionDate" Type="datetime" />
+          <Property Name="ClosingDate" Type="datetime" />
+          <Property Name="Beds" Type="int" />
+          <Property Name="Baths" Type="decimal" Precision="2" Scale="1" />
+          <Property Name="SquareFoot" Type="int" />
+          <Property Name="Style" Type="nvarchar(max)" />
+          <Property Name="BuildingStyle_StyleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="int" Nullable="false" />
+          <Property Name="Start" Type="datetime" Nullable="false" />
+          <Property Name="End" Type="datetime" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="OwnerId" Type="int" />
+          <Property Name="IsAllDay" Type="bit" Nullable="false" />
+          <Property Name="RecurrenceRule" Type="nvarchar(max)" />
+          <Property Name="RecurrenceId" Type="int" />
+          <Property Name="RecurrenceException" Type="nvarchar(max)" />
+          <Property Name="StartTimezone" Type="nvarchar(max)" />
+          <Property Name="EndTimezone" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ListingBuildingStyle">
+          <End Role="BuildingStyles" Type="Self.BuildingStyles" Multiplicity="1" />
+          <End Role="Listings" Type="Self.Listings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BuildingStyles">
+              <PropertyRef Name="StyleId" />
+            </Principal>
+            <Dependent Role="Listings">
+              <PropertyRef Name="BuildingStyle_StyleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tasks_ToTask">
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
+          <End Role="Tasks1" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="TaskId" />
+            </Principal>
+            <Dependent Role="Tasks1">
+              <PropertyRef Name="RecurrenceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KendoSalesDBModelStoreContainer">
+          <EntitySet Name="BuildingStyles" EntityType="Self.BuildingStyles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Listings" EntityType="Self.Listings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ListingBuildingStyle" Association="Self.FK_ListingBuildingStyle">
+            <End Role="BuildingStyles" EntitySet="BuildingStyles" />
+            <End Role="Listings" EntitySet="Listings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tasks_ToTask" Association="Self.FK_Tasks_ToTask">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="Tasks1" EntitySet="Tasks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KendoSalesDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Task">
           <Key>
-            <PropertyRef Name="TaskId" />
+            <PropertyRef Name="TaskID" />
           </Key>
-          <Property Name="TaskId" Type="Int32" Nullable="false" />
+          <Property Name="TaskID" Type="Int32" Nullable="false" />
           <Property Name="Start" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="End" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="OwnerId" Type="Int32" Nullable="false" />
+          <Property Name="OwnerID" Type="Int32" Nullable="true" />
           <Property Name="IsAllDay" Type="Boolean" Nullable="false" />
           <Property Name="RecurrenceRule" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RecurrenceId" Type="Int32" />
+          <Property Name="RecurrenceID" Type="Int32" />
           <Property Name="RecurrenceException" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="StartTimezone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="EndTimezone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -121,10 +138,10 @@
           <End Role="Task1" Type="Self.Task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Task">
-              <PropertyRef Name="TaskId" />
+              <PropertyRef Name="TaskID" />
             </Principal>
             <Dependent Role="Task1">
-              <PropertyRef Name="RecurrenceId" />
+              <PropertyRef Name="RecurrenceID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -137,6 +154,10 @@
           </AssociationSet>
           <EntitySet Name="Listings" EntityType="KendoSalesDBModel.Listing" />
           <EntitySet Name="BuildingStyles" EntityType="KendoSalesDBModel.BuildingStyle" />
+          <AssociationSet Name="FK_ListingBuildingStyle" Association="KendoSalesDBModel.FK_ListingBuildingStyle">
+            <End Role="BuildingStyle" EntitySet="BuildingStyles" />
+            <End Role="Listing" EntitySet="Listings" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Listing">
           <Key>
@@ -152,13 +173,15 @@
           <Property Name="ListingType" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MeetupDate" Type="DateTime" Precision="3" />
-          <Property Name="GoLiveDate" Type="DateTime" Precision="0" />
-          <Property Name="InspectionDate" Type="DateTime" Precision="0" />
-          <Property Name="ClosingDate" Type="DateTime" Precision="0" />
+          <Property Name="GoLiveDate" Type="DateTime" Precision="3" />
+          <Property Name="InspectionDate" Type="DateTime" Precision="3" />
+          <Property Name="ClosingDate" Type="DateTime" Precision="3" />
           <Property Name="Beds" Type="Int32" />
           <Property Name="Baths" Type="Decimal" Precision="2" Scale="1" />
           <Property Name="SquareFoot" Type="Int32" />
           <Property Name="Style" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BuildingStyle_StyleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BuildingStyle" Relationship="KendoSalesDBModel.FK_ListingBuildingStyle" FromRole="Listing" ToRole="BuildingStyle" />
         </EntityType>
         <EntityType Name="BuildingStyle">
           <Key>
@@ -166,7 +189,20 @@
           </Key>
           <Property Name="StyleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Listings" Relationship="KendoSalesDBModel.FK_ListingBuildingStyle" FromRole="BuildingStyle" ToRole="Listing" />
         </EntityType>
+        <Association Name="FK_ListingBuildingStyle">
+          <End Type="KendoSalesDBModel.BuildingStyle" Role="BuildingStyle" Multiplicity="1" />
+          <End Type="KendoSalesDBModel.Listing" Role="Listing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BuildingStyle">
+              <PropertyRef Name="StyleId" />
+            </Principal>
+            <Dependent Role="Listing">
+              <PropertyRef Name="BuildingStyle_StyleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -176,15 +212,15 @@
     <EntitySetMapping Name="Tasks">
       <EntityTypeMapping TypeName="IsTypeOf(KendoSalesDBModel.Task)">
         <MappingFragment StoreEntitySet="Tasks">
-          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskId" />
           <ScalarProperty Name="Start" ColumnName="Start" />
           <ScalarProperty Name="End" ColumnName="End" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerId" />
           <ScalarProperty Name="IsAllDay" ColumnName="IsAllDay" />
           <ScalarProperty Name="RecurrenceRule" ColumnName="RecurrenceRule" />
-          <ScalarProperty Name="RecurrenceId" ColumnName="RecurrenceId" />
+          <ScalarProperty Name="RecurrenceID" ColumnName="RecurrenceId" />
           <ScalarProperty Name="RecurrenceException" ColumnName="RecurrenceException" />
           <ScalarProperty Name="StartTimezone" ColumnName="StartTimezone" />
           <ScalarProperty Name="EndTimezone" ColumnName="EndTimezone" />
@@ -205,7 +241,8 @@
     <EntitySetMapping Name="Listings">
       <EntityTypeMapping TypeName="IsTypeOf(KendoSalesDBModel.Listing)">
         <MappingFragment StoreEntitySet="Listings">
-          <ScalarProperty Name="ListingId" ColumnName="ListingId" />
+          <ScalarProperty Name="BuildingStyle_StyleId" ColumnName="BuildingStyle_StyleId" />
+                <ScalarProperty Name="ListingId" ColumnName="ListingId" />
           <ScalarProperty Name="Address1" ColumnName="Address1" />
           <ScalarProperty Name="Address2" ColumnName="Address2" />
           <ScalarProperty Name="City" ColumnName="City" />

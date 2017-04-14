@@ -29,6 +29,10 @@ var counties = [
     { county: "Trumbull" }, { county: "Tuscarawas" }, { county: "Union" }, { county: "Van Wert" }, { county: "Vinton" }, { county: "Warren" }, { county: "Washington" },
     { county: "Wayne" }, { county: "Williams" }, { county: "Wood" }, { county: "Wyandot" }
 ];
+
+var counts = [
+    { count: "1" }, { count: "1+" }, { count: "2" }, { count: "2+" }, { count: "3" }, { count: "3+" }, { count: "4" }, { count: "4+" }, { count: ">5" }
+];
 function isDate(date) {
     // function came from 
     // http://jquerybyexample.blogspot.com/2011/12/

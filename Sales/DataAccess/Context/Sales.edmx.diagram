@@ -5,11 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="567f2544339d48dfb9d63ed326ebae18" Name="Diagram1">
-        <EntityTypeShape EntityType="KendoSalesDBModel.Task" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KendoSalesDBModel.Task" Width="2.125" PointX="0.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KendoSalesDBModel.User" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="KendoSalesDBModel.FK_Tasks_ToTask" ManuallyRouted="false" />
         <EntityTypeShape EntityType="KendoSalesDBModel.Listing" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="KendoSalesDBModel.BuildingStyle" Width="1.5" PointX="5.375" PointY="3.75" />
+        <AssociationConnector Association="KendoSalesDBModel.FK_ListingBuildingStyle" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

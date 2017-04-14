@@ -31,5 +31,8 @@ namespace Sales.DataAccess.Context
         public Nullable<decimal> Baths { get; set; }
         public Nullable<int> SquareFoot { get; set; }
         public string Style { get; set; }
+        public int BuildingStyle_StyleId { get; set; }
+    
+        public virtual BuildingStyle BuildingStyle { get; set; }
     }
 }

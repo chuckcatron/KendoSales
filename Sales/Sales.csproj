@@ -255,6 +255,7 @@
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="App_Start\StructuremapWebApi.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Core\Logger.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
@@ -279,6 +280,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Sales.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\Context\Sales1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sales.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\Context\Task.cs">
       <DependentUpon>Sales.tt</DependentUpon>
     </Compile>
@@ -293,6 +299,8 @@
     <Compile Include="DataAccess\GridService\Sort.cs" />
     <Compile Include="DataAccess\Interfaces\ISalesRepo.cs" />
     <Compile Include="DataAccess\Interfaces\IUserRepo.cs" />
+    <Compile Include="DataAccess\Models\SchedulerEvent.cs" />
+    <Compile Include="DataAccess\Models\TaskViewModel.cs" />
     <Compile Include="DataAccess\Models\User.cs" />
     <Compile Include="DataAccess\Repositories\SalesRepo.cs" />
     <Compile Include="DataAccess\Repositories\UserRepo.cs" />
@@ -364,6 +372,7 @@
     <Content Include="DataAccess\Context\Sales.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sales.edmx</DependentUpon>
+      <LastGenOutput>Sales1.cs</LastGenOutput>
     </Content>
     <Content Include="data\flot-data.js" />
     <Content Include="data\morris-data.js" />
@@ -379,6 +388,7 @@
     <Content Include="js\models\dataModels.js" />
     <Content Include="js\models\fileModel.js" />
     <Content Include="js\models\gridLoader.js" />
+    <Content Include="js\models\listingModel.js" />
     <Content Include="js\models\loaderModel.js" />
     <Content Include="js\models\userModel.js" />
     <Content Include="js\observables\listing.js" />
@@ -458,6 +468,7 @@
   <ItemGroup>
     <Folder Include="vendor\" />
     <Folder Include="Views\Home\" />
+    <Folder Include="Views\Tasks\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
